@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+:root {
+    --bs-gradient-light: linear-gradient(to right, #e2e3e5, #d6d8db);
+}
+
+body {
+    background-image: var(--bs-gradient-light);
+}
+
+.name{
+    font-family: 'Bevan', serif;
+}
+
+.fab {
+    transition: color 0.3s;
+    /* Agrega una transición suave al cambio de color */
+}
+
+/* Estilo al pasar el cursor sobre los íconos */
+.fab:hover {
+    color: #1466c3;
+}
+
+/* Boton de whatssapp */
+.float {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.float:hover {
+    text-decoration: none;
+    color: #25d366;
+    background-color: #fff;
+}
+
+.my-float {
+    margin-top: 14px;
+}
+
+/* FOOTER */
+.img-logo {
+    width: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* CONTACTO */
+/* MAPA */
+#map-container {
+    width: 100%; /* Hacer que el contenedor ocupe el ancho completo */
+    max-width: 400px; /* Establecer un ancho máximo para el contenedor */
+    border: 4px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto; /* Centrar el contenedor en el caso de que el ancho sea menor al 100% */
+} 
+
+
+/* EFECTO MAQUINA */
+.efect {
+    display: block;
+    font-family: monospace;
+    font-size: 35px;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 10ch;
+
+    animation: typing 2s steps(10),
+        blink .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* MAPA */
+/* Oculta la columna en dispositivos pequeños */
+@media (max-width: 767px) {
+    .d-md-block {
+      display: none;
+    }
+  }
+  

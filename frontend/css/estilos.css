@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+:root {
+    --bs-gradient-light: linear-gradient(to right, #e2e3e5, #d6d8db);
+}
+
+body {
+    background-image: var(--bs-gradient-light);
+}
+
+.name{
+    font-family: 'Bevan', serif;
+}
+
+.fab {
+    transition: color 0.3s;
+    /* Agrega una transición suave al cambio de color */
+}
+
+/* Estilo al pasar el cursor sobre los íconos */
+.fab:hover {
+    color: #1466c3;
+}
+
+/* Boton de whatssapp */
+.float {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.float:hover {
+    text-decoration: none;
+    color: #25d366;
+    background-color: #fff;
+}
+
+.my-float {
+    margin-top: 14px;
+}
+
+/* FOOTER */
+.img-logo {
+    width: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Novedades */
+
+
+/* Carrusel */
+.card {
+    border: none;
+    border-radius: 0;
+    box-shadow: 2px 6px 8px 0 rgba(7, 7, 7, 0.18);
+}
+
+.carousel-inner {
+    padding: 1em;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: #99A3A4;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev span,
+.carousel-control-next span {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@media screen and (min-width: 568px) {
+    .cars-wrapper {
+        display: flex;
+    }
+}
+
+.card {
+    margin: 0 .5em;
+    width: calc(100%/3);
+}
+
+.image-wrapper {
+    height: 22vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 567px) {
+    .image-wrapper {
+        height: 50vw;
+    }
+    .card:not(:first-child) {
+        display: none;
+    }
+
+    .card {
+        width: auto;
+    }
+}
+
+
+.image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.carousel-item {
+    justify-content: center;
+}

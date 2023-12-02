@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8"><!-- Define la codificación de caracteres del documento como UTF-8. -->
+    <meta name="description" content="Sitio de libros">
+    <meta name="author" content="Emilia Hassan">
+    <meta name="keywords" content="Libros, comics">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Configura la escala inicial para dispositivos móviles. -->
+    <title>EL Faro</title><!-- Establece el título de la página web en la barra del navegador. -->
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico"><!-- favicon -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!-- Botón de whatsapp -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- CDN de Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"><!-- íconos Font Awesome Footer-->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!--HEADER  -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="./img/logo_index.jpg" alt="Logo_El_Faro"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">INICIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="novedades.html">NOVEDADES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="terror.html">TERROR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="comics.html">COMICS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="c_ficcion.html">CIENCIA FICCIÓN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">CONTACTO</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <span class="name navbar-brand border-top border-bottom border-dark">EL FARO</span>
+                      </li>
+                  </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+<main>
+  <section>
+    <div class="container p-3">
+      <div class="row">
+        <div class="col-12 col-md-6 p-3 bg-light">
+          <h1 class="display-6 text-primary">CONTACTO</h1>
+          <p class="lead">¿Tienes alguna pregunta o sugerencia?</p>
+          <p class="lead">
+            Contáctanos a través de nuestro formulario o nuestras redes sociales.
+          </p>
+          <p class="lead">
+            Envíanos un mensaje a través de nuestro formulario de contacto y te responderemos lo antes posible.
+          </p>
+        </div>
+        <div class="col-12 col-md-6 p-3 bg-light">
+          <h1 class="display-6 text-primary">REDES SOCIALES</h1>
+          <p class="lead">
+            Síguenos en nuestras redes sociales y mantente al día de nuestras
+            últimas novedades, ofertas y recomendaciones.
+          </p>
+          <h1 class="display-6 text-primary">DIRECCIÓN</h1>
+          <p class="lead">
+            Visítanos en nuestra dirección en el centro de la ciudad y
+            descubre nuestra selección de libros en persona.</p>
+          <p class="font-weight-bold"> 9 de Julio 545, Bahía Blanca, Provincia de Buenos Aires.</p>
+        </div>
+      </div>
+
+
+      <hr class="hr-dashed">
+      <!-- formulario -->
+      <div class="row">
+        <!-- Columna para el formulario -->
+        <div class="col-12 col-md-6 p-3">
+        <form id="form" class="form border border-dark rounded p-2" action="https://formspree.io/f/xeqbnopa" method="POST">
+          <h3 class="tag text-center"><span>Formulario de contacto</span></h3>
+          <div class="form-group p-3">
+            <label for="name">Nombre Completo <span>*</span></label>
+            <input name="name" required type="text" class="form-control" id="name" placeholder="Gonzalo">
+          </div>
+          <div class="form-group p-3">
+            <label for="email">Correo electrónico <span>*</span></label>
+            <input name="email" type="email" class="form-control" id="email" required placeholder="gonzalo@gmail.com">
+          </div>
+          <div class="form-group p-3">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" class="form-control" rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Enviar mensaje
+          </button>
+        </form>
+        <a href="mailto:emiliahassan@hotmail.com"></a>
+      </div>
+
+      <!-- Columna para dispositivos grandes -->
+      <div class="col-md-6 d-none d-md-block">
+        <!-- Mapa - Visible solo en tabletas y escritorios -->
+        <div id="map-container" class="mb-4 mt-4">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.887003906423!2d-62.28354472529721!3d-38.720403186394485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edbca344fe2dc1%3A0xf706a610e946ff48!2s9%20de%20Julio%20545%2C%20B8000AQK%20Bah%C3%ADa%20Blanca%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1699758139734!5m2!1ses!2sar"
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="m-5 text-start border border-dark p-3">
+          <h3 class="text-primary">UBICACIÓN</h3>
+          <p class="lead"><strong>9 de Julio 545, Bahía Blanca, Provincia de Buenos Aires.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+</main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-4">
+
+        <div class="container">
+            <nav class="row justify-content-center"> <!-- una fila -->
+                <!-- Logo -->
+                <a href="index.html"
+                    class="col-10 col-md-4 text-reset text-uppercase d-flex align-items-center mb-3 mb-md-0">
+                    <img src="./img/logo_footer.png" alt="Logo" class="img-logo m-2">
+                    EL FARO
+                </a>
+                <!-- Menu -->
+                <ul class="col-10 col-md-4 list-unstyled">
+                  <li class="font-weight-bold text-uppercase py-2">Secciones</li>
+                  <li><a href="https://www.tematika.com/musica" target="_blank" class="text-reset">Música</a></li>
+                  <li><a href="https://www.tematika.com/peliculas" target="_blank" class="text-reset">Peliculas</a></li>
+                  <li><a href="https://www.tematika.com/pasatiempos" target="_blank" class="text-reset">Pasatiempos</a></li>
+              </ul>
+
+                <!-- <redes sociales -->
+                <ul class="col-10 col-md-4 list-unstyled">
+                    <li class="font-weight-bold text-uppercase p-2">Seguinos!</li>
+                    <li class="d-flex justify-content-between p-3">
+                        <!-- FB -->
+                        <a href="https://www.facebook.com/?locale=es_LA" target="_blank" class="text-reset">
+                            <i class="fab fa-facebook-f fa-lg"></i>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/" target="_blank" class="text-reset">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <!-- Twitter -->
+                        <a href="https://twitter.com/" target="_blank" class="text-reset">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-4">
+          <div class="mb-4 text-center">
+            <button class="btn btn-primary" onclick="autor()">
+              DESARROLLADOR
+            </button>
+          </div>
+          <a href="https://api.whatsapp.com/send?phone=2901416486" class="float" target="_blank">
+            <i class="fab fa-whatsapp my-float"></i>
+          </a>
+        </div>
+    </footer>
+
+<!-- Bootstrap JS y Popper.js CDN -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.8/dist/umd/popper.min.js"
+  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+  integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<script src="js/desarrollador.js"></script>
+<script src="js/contacto.js"></script>
+</body>
+
+</html>
