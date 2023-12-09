@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sitio de libros">
+    <meta name="author" content="Emilia Hassan, Federico Farola, Gustavo Recalde, Sebastian Canosa">
+    <meta name="keywords" content="Libros, comics">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL Faro</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./css/style_1.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+
+    <header>
+        <div id="navbar-container"></div>
+        <!--  <h1 class="efect bg-light">"EL FARO!"</h1> -->
+    </header>
+
+    <main>
+        <div id="app">
+            <section>
+                <!-- Agregar la tabla de libros aquí -->
+                <div class="container mt-2">
+                    <div class="row p-4">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Autor</th>
+                                    <th>Precio</th>
+                                    <th>Género</th>
+                                    <th>Editorial</th>
+                                    <th>Stock</th>
+                                    <th>Imagen</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="libro in libros" :key="libro.id">
+                                    <td>{{ libro.nombre }}</td>
+                                    <td>{{ libro.autor }}</td>
+                                    <td>${{ libro.precio }}</td>
+                                    <td>{{ libro.genero }}</td>
+                                    <td>{{ libro.editorial }}</td>
+                                    <td>{{ libro.stock }}</td>
+                                    <td>
+                                        <img :src="libro.img" alt="Vista previa"
+                                            style="max-width: 100px; max-height: 100px;">
+                                    </td>
+                                    <td>
+                                        <a :href="'edit_libro.html?id=' + libro.id" class="btn btn-warning btn-sm">Editar</a>
+                                        <button class="btn btn-danger btn-sm" @click="eliminarLibro(libro.id)">Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-start mt-3">
+                            <button onclick="goBack()" class="btn btn-primary m-2">Volver</button>
+                            <button type="submit" class="btn btn-success m-2" onclick="window.location.href='alta_libro.html'">Alta Libro</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+        <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- Vue.js y Bootstrap JS y Popper.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                libros: []
+            },
+            mounted() {
+               //fetch('http://localhost:5000/libros/all')
+                fetch('http://scanosa.pythonanywhere.com/libros/all')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.libros = data;
+                    })
+                    .catch(error => {
+                        console.error('Error al obtener los libros:', error);
+                    });
+            },
+            methods: {
+                eliminarLibro(id) {
+                    const nombreLibro = this.libros.find(libro => libro.id === id)?.nombre || 'Este libro';
+                    if (confirm(`¿Estás seguro de eliminar ${nombreLibro}?`)) {
+                        //fetch(`http://localhost:5000/libros/${id}`, {
+                        fetch(`http://scanosa.pythonanywhere.com/libros/${id}`, {
+                            method: 'DELETE'
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                this.libros = this.libros.filter(libro => libro.id !== id);
+                                alert('Libro eliminado correctamente.');
+                            })
+                            .catch(error => {
+                                console.error('Error al eliminar el libro:', error);
+                                alert('Error al eliminar el libro.');
+                            });
+                    }
+                }
+            }
+        });
+
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/desarrollador.js"></script>
+</body>
+
+</html>
