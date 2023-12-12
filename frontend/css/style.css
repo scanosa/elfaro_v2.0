@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Bevan&display=swap');
+
+:root {
+    --bs-gradient-light: linear-gradient(to right, #e2e3e5, #d6d8db);
+}
+
+body {
+    background-image: var(--bs-gradient-light);
+}
+
+.name{
+    font-family: 'Bevan', serif;
+}
+
+.fab {
+    transition: color 0.3s;
+    /* Agrega una transición suave al cambio de color */
+}
+.bg-body-tertiary {
+    filter: invert(1)!important;
+    font-weight: 700;
+    padding: 20px;
+}
+li.d-flex.justify-content-between.p-3 {
+    justify-content: start!important;
+}
+li.d-flex.justify-content-between.p-3 > a {
+    margin: 0 8px;
+}
+.col-md-4.mb-4.text-center > a:first-of-type {
+    width: 100%;
+    padding-bottom: 2px;
+    display: block;
+}
+.col-md-4.mb-4.text-center {
+    justify-content: flex-start;
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+}
+h1.efect {
+    margin-bottom: 25px;
+}
+.row.align-items-center.mt-4.justifyforzada{
+    justify-content: space-around!important;
+}
+
+/* Estilo al pasar el cursor sobre los íconos */
+.fab:hover {
+    color: #1466c3;
+}
+
+/* Boton de whatssapp */
+.float {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 25px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.float:hover {
+    text-decoration: none;
+    color: #25d366;
+    background-color: #fff;
+}
+
+.my-float {
+    margin-top: 14px;
+}
+
+/* FOOTER */
+.img-logo {
+    width: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* CONTACTO */
+/* MAPA */
+#map-container {
+    width: 100%; /* Hacer que el contenedor ocupe el ancho completo */
+    max-width: 400px; /* Establecer un ancho máximo para el contenedor */
+    border: 4px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto; /* Centrar el contenedor en el caso de que el ancho sea menor al 100% */
+} 
+
+
+/* EFECTO MAQUINA */
+.efect {
+    display: block;
+    font-family: monospace;
+    font-size: 35px;
+    white-space: nowrap;/*Evita que el texto se divida en varias línea */
+    border-right: 4px solid; /* Crea un borde derecho sólido de 4 píxeles. Este borde se utiliza para simular el cursor de escritura. */
+    width: 10ch;/*Establece el ancho inicial del elemento en 10 caracteres */
+
+    animation: typing 2s steps(10),
+        blink .5s infinite step-end alternate;
+        /* Aplica dos animaciones al elemento. La primera animación, llamada "typing", simula la escritura y dura 2 segundos, dividiendo la animación en 10 pasos (cada paso corresponde a un carácter). La segunda animación, llamada "blink", hace parpadear el borde derecho del elemento. */
+    overflow: hidden;
+    /* Oculta cualquier contenido que se desborde del elemento. */
+}
+
+/*  animaciones con @keyframes: */
+/* Hace que el ancho del elemento se incremente desde cero */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+/* Hace que el color del borde derecho alterne entre el color sólido especificado en border-right y transparente, creando un efecto de parpadeo. */
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* MAPA */
+/* Oculta la columna en dispositivos pequeños */
+@media (max-width: 767px) {
+    .d-md-block {
+      display: none;
+    }
+  }
+    #passwordForm {
+    display: none;
+    /* Agrega estilos adicionales según tus necesidades */
+  }
+
+  /* Estilos específicos para el componente de búsqueda */
+.buscador {
+  display: flex;
+  margin-bottom: 20px;
+}
